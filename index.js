@@ -24,18 +24,15 @@ app.get("/", function(req, res) {
  	res.render("index");
 });
 
-// Get new player form
+// Serve main game page
 app.get("/game", function(req, res) {
 	res.render("./game");
 });
 
-// // Serve the main game page
-// app.get("/game", function(req, res) {
-// 	db.cahplayer.findAll().then(function(article) {
-// 		res.render("./game", {cahplayer: cahplayer});
-// 	});
-// });
-
+// Serve scores page
+app.get("/scores", function(req, res) {
+	res.render("./scores");
+});
 
 
 // LISTEN

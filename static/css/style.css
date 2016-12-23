@@ -1,0 +1,144 @@
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	padding: 0;
+	margin: 0;
+	background-color: #222222;
+	color: white;
+	text-align: center;
+}
+
+h2 {
+	font-size: 28px;
+	font-weight: 700;
+}
+
+h3 {
+	font-size: 20px;
+	font-weight: 700;
+}
+
+h4 {
+	font-size: 18px;
+	font-weight: 700;
+}
+
+h5 {
+	font-size: 13px;
+	font-weight: 500;
+}
+
+a {
+	font-size: 14px;
+	font-weight: 500;
+}
+
+nav {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	color: white;
+	background-color: black;
+	max-width: 100%;
+	padding: 2px 30px;
+}
+
+nav a {
+	text-decoration: none;
+	color: white;
+	transition-property: color;
+	transition-duration: 300ms;
+}
+
+nav a:hover {
+	color: #bbb;
+}
+
+#nav-links a {
+	padding-left: 35px;
+}
+
+.container {
+	max-width: 100%;
+	display: flex;
+	justify-content: center;
+	padding: 3% 10%;
+}
+
+
+/*** GAME PAGE ***/
+
+main {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+#black-card {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	width: 235px;
+	height: 375px;
+	border-radius: 14px;
+	background-color: black;
+	padding: 0 23px;
+	text-align: left;
+	word-break: break-word;
+}
+
+.black-strapline {
+	display: flex;
+	justify-content: flex-start;
+	align-items: center;
+	padding-bottom: 6px;
+}
+
+.black-strapline img {
+	width: 28px;
+	padding-right: 8px;
+}
+
+#white-cards {
+	display: flex;
+	align-items: center;
+	width: 100%;
+	margin: 3%;
+}
+
+.player {
+	margin: 0 50px;
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	align-items: center;
+}
+
+.player h4 {
+	margin: 10px;
+}
+
+.white-card {
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+	width: 140px;
+	height: 210px;
+	border-radius: 8px;
+	background-color: white;
+	color: black;
+	box-shadow: 2px 2px 2px black;
+	padding: 0 8px;
+	text-align: left;
+	word-break: break-word;
+}
+
+.score {
+	background-color: black;
+	display: inline;
+	border-radius: 4px;
+	width: 40px;
+	height: 50px;
+	line-height: 47px;
+	text-align: center;
+}

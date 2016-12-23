@@ -106,9 +106,9 @@ main {
 
 #white-cards {
 	display: flex;
-	align-items: center;
+	align-items: flex-start;
 	width: 100%;
-	margin: 3%;
+	margin: 4%;
 }
 
 .player {
@@ -121,6 +121,10 @@ main {
 
 .player h4 {
 	margin: 10px;
+}
+
+.player input {
+	display: block;
 }
 
 .card {
@@ -141,17 +145,6 @@ main {
 	box-shadow: 1px 1px 6px black;
 }
 
-.enter-name {
-	color: #6e6e6e;
-	background-color: #222;
-}
-
-.no-player {
-	color: #6e6e6e;
-	background-color: #222;
-	box-shadow: 1px 1px 6px black;
-}
-
 .score {
 	background-color: black;
 	display: inline;
@@ -163,7 +156,6 @@ main {
 }
 
 #suck .card {
-	margin-bottom: 28px;
 	background-color: #222;
 	width: 134px;
 	height: 204px;
@@ -182,6 +174,20 @@ main {
 	margin: 17px 8px;
 }
 
+.submit-btn {
+	border: none;
+	width: 100%;
+	background-color: black;
+	color: white;
+	font-size: 14px;
+	font-weight: 700;
+	border-radius: 7px;
+	padding: 12px;
+	margin-top: 15px;
+}
+
+
+
 
 /*** SCORES PAGE ***/
 
@@ -190,16 +196,11 @@ main {
 	justify-content: flex-start;
 	flex-direction: column;
 	width: 410px;
-	height: 680px;
 	border-radius: 25px;
 	background-color: black;
-	padding: 17px 46px;
+	padding: 17px 46px 34px 46px;
 	text-align: left;
 	word-break: break-word;
-}
-
-#scores-card h1 {
-	max-width: 300px;
 }
 
 #scores-header {
@@ -215,14 +216,30 @@ main {
 
 
 .player-history {
-	display: flex;
-	justify-content: space-between;
-	align-items: flex-end;
+	text-align: left;
 	border-bottom: 2px solid white;
 	margin: 16px 0;
+	position: relative;
 }
 
-.player-history h2 {
-	line-height: 8px;
+#scores-card h1 {
+	padding: 0;
+	margin-bottom: 0;
+}
+
+.player-history h4 {
 	font-weight: 400;
+	max-width: 80%;
+}
+
+.player-history i {
+	padding-right: 8px;
+}
+
+.delete {
+	position: absolute;
+	color: white;
+	top: 40%;
+	right: 0;
+	font-size: 30px;
 }

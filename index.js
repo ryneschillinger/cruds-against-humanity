@@ -29,9 +29,26 @@ app.get("/game", function(req, res) {
 	res.render("./game");
 });
 
-// Serve scores page
-app.get("/scores", function(req, res) {
-	res.render("./scores");
+// Displays history of card combos
+app.get("/history", function(req, res) {
+	db.cahcard.findAll().then(function(cahcard) {
+		res.render("./history", {cahcard: cahcard});
+	});
+});
+
+// Adds to card combos
+app.post("/history", function(req, res) {
+	db.cahcard.create(req.body).then(function(cahcard) { 
+		res.send(true);
+	}); 
+});
+
+// Delete a history item
+app.delete("/history/:id", function(req, res){
+	db.cahcard.findById(req.params.id).then(function(cahcard) {
+		cahcard.destroy();
+		res.send({message:"successfully deleted"});
+	});
 });
 
 

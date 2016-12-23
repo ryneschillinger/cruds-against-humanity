@@ -1,0 +1,16 @@
+<div id="scores-card">
+	<h1>Your sordid past:</h1>
+
+	<% cahcard.forEach(function(cahcard) { %>
+	<div class="player-history" id="<%= cahcard.id %>">
+		<h4><i class="fa fa-square-o" aria-hidden="true"></i>
+			<%= cahcard.black %></h4>
+		<h4><i class="fa fa-square" aria-hidden="true"></i>
+			<%= cahcard.white %></h4>
+		<a class="delete">
+			<i class="fa fa-times-circle" aria-hidden="true"></i>
+		</a>
+	</div>
+	<% }); %>
+
+</div>

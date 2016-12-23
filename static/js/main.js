@@ -1,15 +1,17 @@
-console.log("HOLLATCHABOY");
+var black = ""
+var white = ""
 
 //Get random black card
 
 function newBlackCard() {
 	var randomNumber = Math.floor(Math.random()*2366);
 	var blackCard = CARDS.blackCards[randomNumber].text;
-	return blackCard;
+	black = blackCard;
+	return black;
 }
 
 function dealBlackCard() {
-	$("#black-card-text").html(newBlackCard());
+	$("#black").html(newBlackCard());
 }
 
 // Get random white cards
@@ -19,7 +21,8 @@ var numWhiteCards = $('.white-card').length + 1;
 function newWhiteCard() {
 	var randomNumber = Math.floor(Math.random()*6097);
 	var whiteCard = CARDS.whiteCards[randomNumber];
-	return whiteCard;
+	white = whiteCard;
+	return white;
 }
 
 function dealWhiteCards() {
@@ -41,4 +44,40 @@ $(document).ready(function() {
 $("#suck").click(function() {
 	dealBlackCard();
 	dealWhiteCards();
+});
+
+
+// Choose white card & save to history
+
+$('.white-card').on('click', function(e) {
+	black = $("#black").text();
+	white = $(this).find("h4").text();
+	var url = "/history";
+	  $.ajax({
+	  	url: url,
+	  	method: 'POST',
+	  	data: {
+	  		black: black,
+	  		white: white
+	  	}
+	}).done(function(data) {
+		console.log(data);
+	    dealBlackCard();
+	    dealWhiteCards();
+	  });
+});
+
+
+// Delete a history item
+
+$('.delete').on('click', function(e) {
+
+	var url = "/history/" + e.target.parentNode.parentNode.id;
+
+	$.ajax({
+	  method: 'DELETE',
+	  url: url
+	}).done(function(data) {
+		$(e.target).parent().parent().remove();
+	});
 });

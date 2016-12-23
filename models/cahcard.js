@@ -1,8 +1,8 @@
 'use strict';
 module.exports = function(sequelize, DataTypes) {
-  var cahplayer = sequelize.define('cahplayer', {
-    name: DataTypes.STRING,
-    cards: DataTypes.INTEGER
+  var cahcard = sequelize.define('cahcard', {
+    black: DataTypes.STRING,
+    white: DataTypes.STRING
   }, {
     classMethods: {
       associate: function(models) {
@@ -10,5 +10,5 @@ module.exports = function(sequelize, DataTypes) {
       }
     }
   });
-  return cahplayer;
+  return cahcard;
 };

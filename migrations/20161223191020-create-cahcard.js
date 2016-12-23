@@ -1,18 +1,18 @@
 'use strict';
 module.exports = {
   up: function(queryInterface, Sequelize) {
-    return queryInterface.createTable('cahplayers', {
+    return queryInterface.createTable('cahcards', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      name: {
+      black: {
         type: Sequelize.STRING
       },
-      cards: {
-        type: Sequelize.INTEGER
+      white: {
+        type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
@@ -25,6 +25,6 @@ module.exports = {
     });
   },
   down: function(queryInterface, Sequelize) {
-    return queryInterface.dropTable('cahplayers');
+    return queryInterface.dropTable('cahcards');
   }
 };
